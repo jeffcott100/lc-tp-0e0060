@@ -69,6 +69,9 @@ section[id]{scroll-margin-top:70px}
 .car .prev{left:1.2vw}.car .next{right:1.2vw}
 .car .dots{position:absolute;bottom:18px;right:5vw;z-index:4;display:flex;gap:8px}.car .dots button{width:10px;height:10px;border-radius:50%;border:0;padding:0;background:rgba(255,255,255,.45);cursor:pointer}.car .dots button.on{background:#fff;width:26px;border-radius:6px}
 @media(max-width:800px){.car .arr{display:none}.car figcaption{top:72px;font-size:.9rem}.car .dots{right:auto;left:50%;transform:translateX(-50%);bottom:12px}.hero{padding-bottom:48px}}
+.ba.pair{grid-template-columns:1fr 1fr}.ba .after figcaption{background:var(--clay)}.ba figure{overflow:hidden;border-radius:14px}.ba img{transition:transform .8s}.ba figure:hover img{transform:scale(1.04)}.ba .cr{position:absolute;right:.8rem;bottom:.8rem;font-size:.7rem;color:#fff;text-shadow:0 1px 3px #000}
+.wide{margin-top:2.4rem;position:relative}.wide img{width:100%;height:440px;object-fit:cover;border-radius:14px;box-shadow:0 20px 40px rgba(0,0,0,.15)}
+@media(max-width:800px){.ba.pair{grid-template-columns:1fr}.wide img{height:240px}}
 </style><link rel="icon" type="image/svg+xml" href="logo.svg"><link rel="icon" type="image/png" href="logo.png"></head><body>
 <nav><a class="brand" href="#top" aria-label="Project Sky-Path home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="38" height="38" aria-hidden="true"><defs><linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7cc3e8"/><stop offset="1" stop-color="#f7d9a8"/></linearGradient></defs><rect width="38" height="38" aria-hidden="true" rx="14" fill="url(#sk)"/><circle cx="44" cy="22" r="9" fill="#f2a03d"/><path d="M6 44 C 20 30, 40 30, 58 38" fill="none" stroke="#1d2622" stroke-width="5" stroke-linecap="round"/><path d="M6 44 C 20 30, 40 30, 58 38" fill="none" stroke="#6fa05a" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="1 5"/><path d="M17 38v18M32 33.5v22.5M47 34.5v21.5" stroke="#1d2622" stroke-width="3" stroke-linecap="round"/><path d="M27 31c-1-8 5-13 13-13-0 8-5 13-13 13z" fill="#5f7a55"/><path d="M27 31l9-9" stroke="#f5efe4" stroke-width="1.3" stroke-linecap="round"/></svg>
 <span><b>Sky-Path</b><small>The Texan Promenade</small></span></a><div class="spy"><a href="#opportunity" data-id="opportunity">Opportunity</a><a href="#vision" data-id="vision">Vision</a><a href="#design" data-id="design">Design</a><a href="#impact" data-id="impact">Impact</a><a href="#funding" data-id="funding">Funding</a><a href="#precedents" data-id="precedents">Precedents</a><a href="#petition" data-id="petition">Sign the petition</a><a href="#contact" data-id="contact">Get involved</a><i class="spybar"></i></div></nav>
@@ -79,7 +82,8 @@ section[id]{scroll-margin-top:70px}
 
 <section id="opportunity" class="reveal"><div class="eyebrow">The opportunity</div><h2>A $50M liability, ready for a second life</h2>
 <p class="lead">The APT system has sat idle since 2020. Its mechanics are obsolete and it is a closed-loop technology with no path forward. Today it is a maintenance liability, not a transit asset.</p>
-<div class="split"><img src="img/legacy.jpg" alt="Abandoned APT guideway"><div>
+<div class="ba pair stag"><figure><img src="img/real/apt-guideway.webp" alt="Las Colinas APT guideway and tracks looking south from near Bell Tower/Mandalay Canal station" loading="lazy"><figcaption>TODAY</figcaption><span class="cr">Photo: Ansem27, CC BY-SA 3.0</span></figure><figure class="after"><img src="img/carousel/c1.webp" alt="Concept rendering of joggers on the railed walkway between towers" loading="lazy"><figcaption>SKY-PATH · CONCEPT</figcaption></figure></div>
+<div style="margin-top:3rem"><div>
 <div class="grid stag" style="grid-template-columns:1fr 1fr;margin:0">
 <div class="card"><h3>$50M</h3><p>in sunk capital in the structure</p></div>
 <div class="card"><h3>$45M</h3><p>original system cost (1989)</p></div>
@@ -92,11 +96,13 @@ section[id]{scroll-margin-top:70px}
 <div class="split"><div><h3>The 0.35-mile catalyst zone</h3><ul class="nodes">
 <li><b>Node A:</b> Tower 909 / DART Orange Line station</li><li><b>Node B:</b> Mandalay Canal / Bell Tower Plaza</li>
 <li><b>Integration:</b> Lake Carolyn water taxi &amp; promenade</li><li><b>Transit link:</b> pedestrian bridge to DART already exists at Tower 909</li></ul></div>
-<img src="img/map.jpg" alt="Satellite view of Las Colinas Urban Center"></div></section>
+<img src="img/map.jpg" alt="Satellite view of Las Colinas Urban Center"></div>
+<div class="ba pair stag"><figure><img src="img/real/apt-canal.webp" alt="APT guideway heading toward Bell Tower/Mandalay Canal station" loading="lazy"><figcaption>TODAY</figcaption><span class="cr">Photo: Payton Chung, CC BY 2.0</span></figure><figure class="after"><img src="img/carousel/c3.webp" alt="Concept rendering of the walkway over the Mandalay Canal at dusk" loading="lazy"><figcaption>SKY-PATH · MANDALAY CANAL</figcaption></figure></div><div class="ba pair stag"><figure><img src="img/real/apt-lake.webp" alt="APT guideway heading toward Tower on Lake Carolyn station" loading="lazy"><figcaption>TODAY</figcaption><span class="cr">Photo: Payton Chung, CC BY 2.0</span></figure><figure class="after"><img src="img/carousel/c2.webp" alt="Concept rendering of shade canopies along the path by Lake Carolyn" loading="lazy"><figcaption>SKY-PATH · LAKE CAROLYN</figcaption></figure></div></section>
 
 <section id="design" class="reveal"><div class="eyebrow">Design concept</div><h2>Designed for a Texas summer</h2>
 <p class="lead">Native, heat-tolerant xeriscaping and sustainable timber decking make a cooler stretch of walkway in the middle of the Urban Center.</p>
 <div class="specs"><div><b>Low-water landscape</b>Agave, yucca, Texas sage</div><div><b>Integrated lighting</b>LED-embedded floor systems</div><div><b>Thermal buffer</b>Timber decking cuts heat-island effect</div><div><b>Deck width</b>12–16 ft path on the dual-lane guideway</div></div>
+<div class="wide reveal"><img src="img/carousel/c4.webp" alt="Concept rendering of a former APT station turned entry plaza with stairs and glass elevator" loading="lazy"></div>
 <h3 style="margin-top:4rem;font-size:1.8rem">Activation elements</h3>
 <div class="grid stag">
 <div class="card"><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="#5f7a55" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 20 24 8l18 12z" fill="#e9f0e4"/><path d="M24 20v22M14 42h20"/></svg><h3>Thermal shade</h3><p>Modular tensile canopies against 100°F+ heat, so the space works 365 days a year.</p></div>
@@ -142,9 +148,10 @@ section[id]{scroll-margin-top:70px}
 <div class="thanks" id="thanks" hidden><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="#5f7a55" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="18" fill="#e9f0e4"/><path d="m16 24 6 6 11-12"/></svg><h3>Thank you for signing!</h3><p>Your name helps show there's real support for Sky-Path. Please share this page with a neighbor or coworker.</p></div>
 </div></section>
 <section id="contact" class="cta reveal"><div class="eyebrow">Get involved</div><h2>Interested in Sky-Path?</h2>
+<div class="wide" style="margin:2rem 0"><img src="img/carousel/c5.webp" alt="Concept rendering of an evening bench overlook by the clock tower" loading="lazy"></div>
 <p class="lead" style="margin:0 auto 2rem">Council members, property owners and prospective sponsors: we'd like to hear from you.</p>
 <a class="btn" href="mailto:jeff.cott100@gmail.com?subject=Project%20Sky-Path%20interest">Express interest</a></section>
-<footer>Project Sky-Path is an independent concept proposal. Renderings are illustrative.<br>Renderings are concept visualizations based on photos of the Las Colinas APT: Payton Chung (CC BY 2.0), Ansem27 via Wikimedia Commons (CC BY-SA 3.0), Wikimedia Commons (CC BY 2.5).</footer>
+<footer>Project Sky-Path is an independent concept proposal. Renderings are illustrative concept visualizations.<br>Photo credits: “Las Colinas APT” by Ansem27 via Wikimedia Commons (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>); “LasColinasAPT02” and “LasColinasAPT03” by Payton Chung via Wikimedia Commons (<a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>). Photos resized. Renderings are based on these photos.</footer>
 <script>
 const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
 const o=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');[...x.target.children].forEach((c,i)=>c.style.transitionDelay=x.target.classList.contains('stag')?i*90+'ms':'');setTimeout(()=>[...x.target.children].forEach(c=>c.style.transitionDelay=''),1400);o.unobserve(x.target)}}),{threshold:.12});
