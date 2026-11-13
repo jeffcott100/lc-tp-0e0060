@@ -6,8 +6,8 @@
 :root{--sand:#f5efe4;--clay:#c8602e;--sage:#5f7a55;--ink:#1d2622;--muted:#5b655f}
 *{box-sizing:border-box;margin:0}body{font-family:Inter,sans-serif;color:var(--ink);background:var(--sand);line-height:1.6}
 h1,h2,h3{font-family:Fraunces,serif;line-height:1.15}a{color:var(--clay)}
-nav{position:sticky;top:0;z-index:9;background:rgba(29,38,34,.92);backdrop-filter:blur(6px);display:flex;justify-content:space-between;align-items:center;padding:.8rem 5vw;color:#fff}
-nav b{font-family:Fraunces;letter-spacing:.05em}nav .links a{color:#e9e2d3;text-decoration:none;margin-left:1.2rem;font-size:.9rem}
+navX{position:sticky;top:0;z-index:9;background:rgba(29,38,34,.92);backdrop-filter:blur(6px);display:flex;justify-content:space-between;align-items:center;padding:.8rem 5vw;color:#fff}
+navX b{font-family:Fraunces;letter-spacing:.05em}navX .links a{color:#e9e2d3;text-decoration:none;margin-left:1.2rem;font-size:.9rem}
 .hero{min-height:88vh;display:flex;align-items:flex-end;padding:8vh 5vw;color:#fff;background:linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.75)),url(img/after.jpg) center/cover}
 .hero h1{font-size:clamp(2.4rem,7vw,5rem)}.hero p{max-width:640px;font-size:1.15rem;margin:.8rem 0 1.6rem}
 .eyebrow{text-transform:uppercase;letter-spacing:.2em;font-size:.8rem;color:var(--clay);font-weight:600}
@@ -34,19 +34,42 @@ section{padding:12vh 5vw;max-width:1200px;margin:auto}section h2{font-size:clamp
 .nodes li{margin:.4rem 0}
 .cta{text-align:center}.btn{display:inline-block;background:var(--clay);color:#fff;padding:1rem 2rem;border-radius:40px;text-decoration:none;font-weight:600;transition:transform .2s}.btn:hover{transform:scale(1.06)}
 footer{text-align:center;padding:2rem;font-size:.8rem;color:var(--muted)}
-.reveal{opacity:0;transform:translateY(30px);transition:all .8s}.reveal.on{opacity:1;transform:none}
-@media(max-width:800px){.split,.ba,.big{grid-template-columns:1fr}.specs{grid-template-columns:1fr 1fr}.ba img{height:260px}nav .links{display:none}section{padding:9vh 6vw}}
-</style></head><body>
-<nav><b>SKY-PATH</b><div class="links"><a href="#opportunity">Opportunity</a><a href="#vision">Vision</a><a href="#design">Design</a><a href="#impact">Impact</a><a href="#precedents">Precedents</a><a href="#contact">Get involved</a></div></nav>
-<header class="hero"><div><div class="eyebrow">Concept · Las Colinas Urban Center · Irving, TX</div>
+
+@media(max-width:800px){.split,.ba,.big{grid-template-columns:1fr}.specs{grid-template-columns:1fr 1fr}.ba img{height:260px}navX .links{display:none}section{padding:9vh 6vw}}
+
+nav{position:sticky;top:0;z-index:20;background:#fff;color:var(--ink);display:flex;align-items:center;gap:1.5rem;padding:0 5vw;border-bottom:1px solid #e6e2d8;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--ink);padding:.6rem 0;flex:none}.brand b{font-family:Fraunces;font-size:1.15rem;letter-spacing:.02em}.brand small{display:block;font-size:.68rem;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;font-weight:600;line-height:1}
+.spy{position:relative;display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;margin-left:auto;align-self:stretch;align-items:stretch}.spy::-webkit-scrollbar{display:none}
+.spy a{white-space:nowrap;text-decoration:none;color:var(--ink);font-size:.88rem;padding:0 12px;display:flex;align-items:center;transition:color .2s}.spy a:hover{color:var(--clay)}.spy a.on{color:var(--sage);font-weight:600}
+.spybar{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--sage);border-radius:3px 3px 0 0;opacity:0;transition:transform .3s ease,width .3s ease,opacity .2s}
+section[id]{scroll-margin-top:70px}
+.card svg.ic{width:52px;height:52px;margin-bottom:.8rem;transition:transform .3s}.card:hover svg.ic{transform:scale(1.1) rotate(-4deg)}
+.hero{background-size:110%;animation:drift 22s ease-in-out infinite alternate}@keyframes drift{from{background-position:50% 40%}to{background-position:50% 60%}}
+.hero>div>*{animation:rise .9s both}.hero>div>*:nth-child(2){animation-delay:.15s}.hero>div>*:nth-child(3){animation-delay:.3s}.hero>div>*:nth-child(4){animation-delay:.45s}@keyframes rise{from{opacity:0;transform:translateY(24px)}}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}.reveal.on{opacity:1;transform:none}
+.stag>*{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s,box-shadow .3s}.stag.on>*{opacity:1;transform:none}.stag.on>.card:hover{transform:translateY(-8px) scale(1.03)}
+.fund{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2rem}.pill{display:inline-block;background:#e9f0e4;color:var(--sage);font-weight:600;font-size:.8rem;padding:.2rem .7rem;border-radius:20px;margin-top:1.4rem}
+#petition{max-width:none;background:linear-gradient(160deg,#e9f0e4,#f5efe4)}#petition .in{max-width:760px;margin:auto;text-align:center}
+.pform{background:#fff;border-radius:16px;padding:2rem;box-shadow:0 14px 40px rgba(0,0,0,.08);margin-top:2rem;text-align:left;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.pform label{font-size:.85rem;font-weight:600;display:flex;flex-direction:column;gap:.3rem}.pform .full{grid-column:1/-1}
+.pform input[type=text],.pform input[type=email]{font:inherit;padding:.75rem .9rem;border:1px solid #d6d0c4;border-radius:10px}.pform input:focus{outline:2px solid var(--sage);border-color:transparent}
+.pform .chk{flex-direction:row;align-items:center;font-weight:400}.pform button{border:0;cursor:pointer;font:inherit;font-weight:600}
+.thanks{background:#fff;border-radius:16px;padding:2.4rem;margin-top:2rem;box-shadow:0 14px 40px rgba(0,0,0,.08)}.thanks svg{width:56px;height:56px}
+.fine{font-size:.8rem;color:var(--muted);margin-top:.8rem}
+@media(max-width:800px){nav{gap:.6rem;padding:0 0 0 4vw}.brand small{display:none}.spy a{padding:0 10px;font-size:.84rem}.fund,.pform{grid-template-columns:1fr}.hero{background-size:cover;animation:none}.stats div{flex:1 1 40%}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal,.stag>*{opacity:1!important;transform:none!important}}
+</style><link rel="icon" type="image/svg+xml" href="logo.svg"><link rel="icon" type="image/png" href="logo.png"></head><body>
+<nav><a class="brand" href="#top" aria-label="Project Sky-Path home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="38" height="38" aria-hidden="true"><defs><linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7cc3e8"/><stop offset="1" stop-color="#f7d9a8"/></linearGradient></defs><rect width="38" height="38" aria-hidden="true" rx="14" fill="url(#sk)"/><circle cx="44" cy="22" r="9" fill="#f2a03d"/><path d="M6 44 C 20 30, 40 30, 58 38" fill="none" stroke="#1d2622" stroke-width="5" stroke-linecap="round"/><path d="M6 44 C 20 30, 40 30, 58 38" fill="none" stroke="#6fa05a" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="1 5"/><path d="M17 38v18M32 33.5v22.5M47 34.5v21.5" stroke="#1d2622" stroke-width="3" stroke-linecap="round"/><path d="M27 31c-1-8 5-13 13-13-0 8-5 13-13 13z" fill="#5f7a55"/><path d="M27 31l9-9" stroke="#f5efe4" stroke-width="1.3" stroke-linecap="round"/></svg>
+<span><b>Sky-Path</b><small>The Texan Promenade</small></span></a><div class="spy"><a href="#opportunity" data-id="opportunity">Opportunity</a><a href="#vision" data-id="vision">Vision</a><a href="#design" data-id="design">Design</a><a href="#impact" data-id="impact">Impact</a><a href="#funding" data-id="funding">Funding</a><a href="#precedents" data-id="precedents">Precedents</a><a href="#petition" data-id="petition">Sign the petition</a><a href="#contact" data-id="contact">Get involved</a><i class="spybar"></i></div></nav>
+<header class="hero" id="top"><div><div class="eyebrow">Concept · Las Colinas Urban Center · Irving, TX</div>
 <h1>Project Sky-Path<br>The Texan Promenade</h1>
 <p>Turning the abandoned Las Colinas APT people-mover guideway into an elevated park above the Urban Center: shaded, native and walkable.</p>
-<div class="stats"><div><strong>1.4 mi</strong>guideway</div><div><strong>4</strong>stations</div><div><strong>2020</strong>closed</div><div><strong>0.35 mi</strong>pilot segment</div></div></div></header>
+<div class="stats"><div><strong class="cnt" data-to="1.4" data-dec="1" data-suf=" mi">1.4 mi</strong>guideway</div><div><strong class="cnt" data-to="4">4</strong>stations</div><div><strong class="cnt" data-to="2020" data-nofmt="1">2020</strong>closed</div><div><strong class="cnt" data-to="0.35" data-dec="2" data-suf=" mi">0.35 mi</strong>pilot segment</div></div></div></header>
 
 <section id="opportunity" class="reveal"><div class="eyebrow">The opportunity</div><h2>A $50M liability, ready for a second life</h2>
 <p class="lead">The APT system has sat idle since 2020. Its mechanics are obsolete and it is a closed-loop technology with no path forward. Today it is a maintenance liability, not a transit asset.</p>
 <div class="split"><img src="img/legacy.jpg" alt="Abandoned APT guideway"><div>
-<div class="grid" style="grid-template-columns:1fr 1fr;margin:0">
+<div class="grid stag" style="grid-template-columns:1fr 1fr;margin:0">
 <div class="card"><h3>$50M</h3><p>in sunk capital in the structure</p></div>
 <div class="card"><h3>$45M</h3><p>original system cost (1989)</p></div>
 <div class="card"><h3>40+ yrs</h3><p>old, with no maintenance since 2020</p></div>
@@ -66,23 +89,30 @@ footer{text-align:center;padding:2rem;font-size:.8rem;color:var(--muted)}
 <figure><img src="img/after.jpg" alt="After rendering"><figcaption>AFTER: The Texan Promenade (concept)</figcaption></figure></div>
 <div class="specs"><div><b>Low-water landscape</b>Agave, yucca, Texas sage</div><div><b>Integrated lighting</b>LED-embedded floor systems</div><div><b>Thermal buffer</b>Timber decking cuts heat-island effect</div><div><b>Deck width</b>12–16 ft path on the dual-lane guideway</div></div>
 <h3 style="margin-top:4rem;font-size:1.8rem">Activation elements</h3>
-<div class="grid">
-<div class="card"><img class="ic" src="img/shade.png" alt=""><h3>Thermal shade</h3><p>Modular tensile canopies against 100°F+ heat, so the space works 365 days a year.</p></div>
-<div class="card"><img class="ic" src="img/kiosk.png" alt=""><h3>Micro-kiosks</h3><p>Prefabricated vendor pods at station platforms that bring in lease revenue and weekend foot traffic.</p></div>
-<div class="card"><img class="ic" src="img/ada.png" alt=""><h3>ADA ingress</h3><p>Lift towers and ramps built into existing office plazas for full accessibility.</p></div>
-<div class="card"><img class="ic" src="img/shade2.png" alt=""><h3>Suspended shade</h3><p>Tensile fabric structures that block the sun and still let the breeze through.</p></div>
-<div class="card"><img class="ic" src="img/xeri.png" alt=""><h3>Xeriscaping</h3><p>Native sage, agave and yucca, which need very little water and handle the heat.</p></div>
-<div class="card"><img class="ic" src="img/light.png" alt=""><h3>Illumination</h3><p>Integrated LED floor lighting for round-the-clock safety and evening atmosphere along the canal.</p></div>
+<div class="grid stag">
+<div class="card"><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="#5f7a55" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 20 24 8l18 12z" fill="#e9f0e4"/><path d="M24 20v22M14 42h20"/></svg><h3>Thermal shade</h3><p>Modular tensile canopies against 100°F+ heat, so the space works 365 days a year.</p></div>
+<div class="card"><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="#5f7a55" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 18h32l-3-8H11z" fill="#f7e3d6" stroke="#c8602e"/><rect x="10" y="18" width="28" height="22" rx="2"/><path d="M20 40V28h8v12"/></svg><h3>Micro-kiosks</h3><p>Prefabricated vendor pods at station platforms that bring in lease revenue and weekend foot traffic.</p></div>
+<div class="card"><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="#5f7a55" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="22" cy="9" r="3.5"/><path d="M22 14v12h10l4 10"/><circle cx="20" cy="33" r="9"/></svg><h3>ADA ingress</h3><p>Lift towers and ramps built into existing office plazas for full accessibility.</p></div>
+<div class="card"><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="#5f7a55" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 14c6 6 12 6 18 0s12-6 18 0" fill="#e9f0e4"/><path d="M6 14v26M42 14v26M24 30v10"/><circle cx="24" cy="26" r="3" stroke="#f2a03d"/></svg><h3>Suspended shade</h3><p>Tensile fabric structures that block the sun and still let the breeze through.</p></div>
+<div class="card"><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="#5f7a55" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 42V20M24 30c-8 0-12-6-12-14 8 0 12 6 12 14zM24 26c6 0 10-5 10-12-6 0-10 5-10 12z" fill="#e9f0e4"/><path d="M14 42h20"/></svg><h3>Xeriscaping</h3><p>Native sage, agave and yucca, which need very little water and handle the heat.</p></div>
+<div class="card"><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="#5f7a55" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 30a10 10 0 1 1 12 0v4H18z" fill="#fdf1d9" stroke="#f2a03d"/><path d="M19 39h10M21 43h6"/></svg><h3>Illumination</h3><p>Integrated LED floor lighting for round-the-clock safety and evening atmosphere along the canal.</p></div>
 </div></section>
 
 <section id="impact" class="dark"><div class="in reveal"><div class="eyebrow" style="color:#f3b48f">Economic impact</div><h2>What an elevated park does for its neighbors</h2>
 <p class="lead">Elevated and cap parks have repeatedly lifted adjacent property values, foot traffic and retail demand.</p>
-<div class="big"><div class="card"><strong>18%</strong>property value uplift</div><div class="card"><strong>5k+</strong>weekly foot traffic</div><div class="card"><strong>12%</strong>rent premium</div></div>
+<div class="big stag"><div class="card"><strong class="cnt" data-to="18" data-suf="%">18%</strong>property value uplift</div><div class="card"><strong class="cnt" data-to="5" data-suf="k+">5k+</strong>weekly foot traffic</div><div class="card"><strong class="cnt" data-to="12" data-suf="%">12%</strong>rent premium</div></div>
 <p class="note">Projected benchmarks drawn from Klyde Warren Park (Dallas) and High Line (NYC) conversions. These are illustrative, not guaranteed outcomes for Sky-Path.</p></div></section>
 
+<section id="funding" class="reveal"><div class="eyebrow">Funding model</div><h2>Built by the community, not billed to taxpayers</h2>
+<p class="lead">Sky-Path is envisioned as a privately funded civic gift. Philanthropy and the corporate partners and employers who call Las Colinas home would fund it, so the conversion does not fall on Irving's local taxpayers.</p>
+<div class="fund stag">
+<div class="card"><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="#5f7a55" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 40s-14-8-14-18a8 8 0 0 1 14-5 8 8 0 0 1 14 5c0 10-14 18-14 18z" fill="#e9f0e4"/></svg><h3>Philanthropy</h3><p>Foundations, families and individual donors who want a lasting public landmark for Irving and North Texas.</p></div>
+<div class="card"><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="#5f7a55" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="14" width="14" height="28" fill="#e9f0e4"/><rect x="26" y="6" width="14" height="36"/><path d="M12 20h6M12 27h6M30 13h6M30 20h6M30 27h6M4 42h40"/></svg><h3>Corporate partners</h3><p>Las Colinas is home to many major employers. A promenade at their front door is an amenity for employees, clients and recruiting.</p></div>
+<div class="card"><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="#5f7a55" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="16" r="5"/><circle cx="32" cy="16" r="5"/><path d="M6 38c0-6 4-10 10-10s10 4 10 10M22 38c0-6 4-10 10-10s10 4 10 10" fill="#e9f0e4"/></svg><h3>Employers &amp; neighbors</h3><p>Nearby businesses and property owners share in the foot traffic and value a park creates, and help sustain it over time.</p></div>
+</div><span class="pill">No new burden on local taxpayers</span></section>
 <section id="precedents" class="cs reveal"><div class="eyebrow">Precedents</div><h2>It has worked before</h2>
 <p class="lead">Six cities that turned rail lines, viaducts and highways into public parks.</p>
-<div class="grid">
+<div class="grid stag">
 <div class="card"><span class="tag">New York City</span><h3>The High Line</h3><p>A 1.45-mile park on a disused elevated freight rail line on Manhattan's West Side. The first section opened in 2009.</p><a href="https://www.thehighline.org" target="_blank" rel="noopener">thehighline.org →</a></div>
 <div class="card"><span class="tag">Dallas</span><h3>Klyde Warren Park</h3><p>A 5.2-acre deck park built over the Woodall Rodgers Freeway, linking Uptown and the Arts District. It opened in 2012.</p><a href="https://www.klydewarrenpark.org" target="_blank" rel="noopener">klydewarrenpark.org →</a></div>
 <div class="card"><span class="tag">Atlanta</span><h3>Atlanta BeltLine</h3><p>A 22-mile loop of historic railroad corridors being turned into trails, parks and transit that connect 45 neighborhoods.</p><a href="https://beltline.org" target="_blank" rel="noopener">beltline.org →</a></div>
@@ -91,9 +121,41 @@ footer{text-align:center;padding:2rem;font-size:.8rem;color:var(--muted)}
 <div class="card"><span class="tag">Seoul</span><h3>Seoullo 7017</h3><p>A 1970 highway overpass near Seoul Station, reopened in 2017 as a roughly 1 km elevated pedestrian garden.</p><a href="https://seoullo7017.co.kr" target="_blank" rel="noopener">seoullo7017.co.kr →</a></div>
 </div></section>
 
+<section id="petition"><div class="in reveal"><div class="eyebrow">Sign the petition</div><h2>Bring Sky-Path to Las Colinas</h2>
+<p class="lead" style="margin:0 auto">Add your name to show Irving City Council and Las Colinas leaders that residents and workers want the old APT guideway reborn as an elevated park, funded by philanthropy and corporate partners, not taxpayers.</p>
+<p class="sigcount" id="sigcount" hidden><b id="signum">0</b> signatures so far</p>
+<form class="pform" id="pform" novalidate>
+<label>Full name<input type="text" name="name" required autocomplete="name"></label>
+<label>Email<input type="email" name="email" required autocomplete="email"></label>
+<label>ZIP code<input type="text" name="zip" required inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code"></label>
+<label class="chk"><input type="checkbox" name="irving" value="yes"> I live or work in Irving</label>
+<div class="full"><button class="btn" type="submit">Sign the petition</button><p class="fine" id="perr" role="alert"></p><p class="fine">We only use your details to count support and share project updates.</p></div></form>
+<div class="thanks" id="thanks" hidden><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="#5f7a55" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="18" fill="#e9f0e4"/><path d="m16 24 6 6 11-12"/></svg><h3>Thank you for signing!</h3><p>Your name helps show there's real support for Sky-Path. Please share this page with a neighbor or coworker.</p></div>
+</div></section>
 <section id="contact" class="cta reveal"><div class="eyebrow">Get involved</div><h2>Interested in Sky-Path?</h2>
 <p class="lead" style="margin:0 auto 2rem">Council members, property owners and prospective sponsors: we'd like to hear from you.</p>
 <a class="btn" href="mailto:jeff.cott100@gmail.com?subject=Project%20Sky-Path%20interest">Express interest</a></section>
 <footer>Project Sky-Path is an independent concept proposal. Renderings are illustrative.</footer>
-<script>const o=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add('on')),{threshold:.1});document.querySelectorAll('.reveal').forEach(el=>o.observe(el));</script>
+<script>
+const PETITION_ENDPOINT=""; // set to a form/API URL (POST JSON) later; empty = mailto fallback
+const PETITION_MAILTO="jeff.cott100@gmail.com";
+const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const o=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');[...x.target.children].forEach((c,i)=>c.style.transitionDelay=x.target.classList.contains('stag')?i*90+'ms':'');setTimeout(()=>[...x.target.children].forEach(c=>c.style.transitionDelay=''),1400);o.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal,.stag').forEach(el=>o.observe(el));
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;cio.unobserve(e.target);const el=e.target,to=+el.dataset.to,dec=+(el.dataset.dec||0),suf=el.dataset.suf||"",t0=performance.now(),D=1500,from=el.dataset.nofmt?to-40:0;
+ const f=t=>{const k=Math.min(1,(t-t0)/D),v=from+(to-from)*(1-Math.pow(1-k,3));el.textContent=v.toFixed(dec)+suf;if(k<1)requestAnimationFrame(f)};requestAnimationFrame(f)}),{threshold:.6});
+if(!RM)document.querySelectorAll('.cnt').forEach(el=>cio.observe(el));
+const nav=document.querySelector('nav'),spy=nav.querySelector('.spy'),bar=spy.querySelector('.spybar'),A=[...spy.querySelectorAll('a')];let cur;
+const upd=()=>{const y=nav.offsetHeight+80;let on=null;A.forEach(a=>{const el=document.getElementById(a.dataset.id);if(el&&el.getBoundingClientRect().top<=y)on=a.dataset.id});
+ if(innerHeight+scrollY>=document.body.scrollHeight-4)on=A[A.length-1].dataset.id;
+ if(on!==cur){cur=on;A.forEach(a=>a.classList.toggle('on',a.dataset.id==on))}const a=A.find(a=>a.dataset.id==on);
+ if(a){bar.style.opacity=1;bar.style.width=a.offsetWidth+'px';bar.style.transform=`translateX(${a.offsetLeft}px)`;if(a.offsetLeft<spy.scrollLeft||a.offsetLeft+a.offsetWidth>spy.scrollLeft+spy.clientWidth)spy.scrollTo({left:a.offsetLeft-20,behavior:RM?'auto':'smooth'})}else bar.style.opacity=0};
+addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);setTimeout(upd,50);
+const pf=document.getElementById('pform');
+pf.addEventListener('submit',async ev=>{ev.preventDefault();const d=Object.fromEntries(new FormData(pf));d.irving=d.irving?'yes':'no';const err=document.getElementById('perr');
+ if(!d.name.trim()||!/^\S+@\S+\.\S+$/.test(d.email)||!/^\d{5}$/.test(d.zip)){err.textContent='Please enter your name, a valid email and a 5-digit ZIP.';return}err.textContent='';
+ if(PETITION_ENDPOINT){try{const r=await fetch(PETITION_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});if(!r.ok)throw 0}catch(e){err.textContent='Something went wrong. Please try again.';return}}
+ else{const body=`Name: ${d.name}\nEmail: ${d.email}\nZIP: ${d.zip}\nLives/works in Irving: ${d.irving}`;location.href=`mailto:${PETITION_MAILTO}?subject=${encodeURIComponent('Sky-Path petition signature')}&body=${encodeURIComponent(body)}`}
+ pf.hidden=true;document.getElementById('thanks').hidden=false});
+</script>
 </body></html>
