@@ -162,11 +162,12 @@ const pf=document.getElementById('pform');
 pf.addEventListener('submit',ev=>{ev.preventDefault();document.getElementById('psoon').textContent='Petition launching soon. Thanks for your interest!'});
 (()=>{const c=document.getElementById('car'),t=c.querySelector('.track'),n=t.children.length,dots=c.querySelector('.dots');let i=0,tm=null,paused=false,x0=null;
 for(let k=0;k<n;k++){const b=document.createElement('button');b.setAttribute('aria-label','Go to slide '+(k+1));b.onclick=()=>{stop();go(k)};dots.appendChild(b)}
-const go=k=>{i=(k+n)%n;t.style.transform=`translateX(${-i*100}%)`;[...dots.children].forEach((d,j)=>d.classList.toggle('on',j==i));[...t.children].forEach((f,j)=>f.setAttribute('aria-hidden',j!=i))};
+const cl=t.children[0].cloneNode(true);cl.setAttribute('aria-hidden','true');t.appendChild(cl);
+const go=k=>{if(k>=n){i=0;t.style.transform=`translateX(${-n*100}%)`;t.addEventListener('transitionend',()=>{t.style.transition='none';t.style.transform='translateX(0)';t.offsetWidth;t.style.transition=''},{once:true})}else{i=(k+n)%n;t.style.transform=`translateX(${-i*100}%)`}[...dots.children].forEach((d,j)=>d.classList.toggle('on',j==i));[...t.children].forEach((f,j)=>f.setAttribute('aria-hidden',j!=i))};
 const stop=()=>{paused=true;clearInterval(tm)};
 c.querySelector('.prev').onclick=()=>{stop();go(i-1)};c.querySelector('.next').onclick=()=>{stop();go(i+1)};
-c.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;stop()},{passive:true});
-c.addEventListener('touchend',e=>{if(x0==null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)go(i+(dx<0?1:-1));x0=null});
+const h=document.getElementById('top');h.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;stop()},{passive:true});
+h.addEventListener('touchend',e=>{if(x0==null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)go(i+(dx<0?1:-1));x0=null});
 c.addEventListener('keydown',e=>{if(e.key=='ArrowLeft'){stop();go(i-1)}if(e.key=='ArrowRight'){stop();go(i+1)}});
 go(0);if(!RM)tm=setInterval(()=>{if(!paused&&!document.hidden)go(i+1)},5000)})();
 </script>
