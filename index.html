@@ -8,7 +8,7 @@
 h1,h2,h3{font-family:Fraunces,serif;line-height:1.15}a{color:var(--clay)}
 navX{position:sticky;top:0;z-index:9;background:rgba(29,38,34,.92);backdrop-filter:blur(6px);display:flex;justify-content:space-between;align-items:center;padding:.8rem 5vw;color:#fff}
 navX b{font-family:Fraunces;letter-spacing:.05em}navX .links a{color:#e9e2d3;text-decoration:none;margin-left:1.2rem;font-size:.9rem}
-.hero{min-height:88vh;display:flex;align-items:flex-end;padding:8vh 5vw;color:#fff;background:linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.75)),url(img/after.jpg) center/cover}
+.hero{min-height:88vh;display:flex;align-items:flex-end;padding:8vh 5vw;color:#fff;position:relative;overflow:hidden;background:#1d2622}
 .hero h1{font-size:clamp(2.4rem,7vw,5rem)}.hero p{max-width:640px;font-size:1.15rem;margin:.8rem 0 1.6rem}
 .eyebrow{text-transform:uppercase;letter-spacing:.2em;font-size:.8rem;color:var(--clay);font-weight:600}
 .hero .eyebrow{color:#f3b48f}
@@ -58,10 +58,21 @@ section[id]{scroll-margin-top:70px}
 .fine{font-size:.8rem;color:var(--muted);margin-top:.8rem}
 @media(max-width:800px){nav{gap:.6rem;padding:0 0 0 4vw}.brand small{display:none}.spy a{padding:0 10px;font-size:.84rem}.fund,.pform{grid-template-columns:1fr}.hero{background-size:cover;animation:none}.stats div{flex:1 1 40%}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal,.stag>*{opacity:1!important;transform:none!important}}
+
+.hero>div.htxt{position:relative;z-index:2;pointer-events:none}.hero>div.htxt *{pointer-events:auto}
+.car{position:absolute;inset:0;z-index:0;touch-action:pan-y}.car .track{display:flex;height:100%;transition:transform .6s ease}
+.car figure{flex:0 0 100%;height:100%;position:relative;margin:0}.car img{width:100%;height:100%;object-fit:cover;display:block}
+.car::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.15) 35%,rgba(0,0,0,.78));pointer-events:none}
+.car figcaption{position:absolute;top:84px;right:5vw;z-index:3;text-align:right;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.6);font-weight:600}
+.car figcaption span{display:inline-block;margin-top:.35rem;font-size:.68rem;text-transform:uppercase;letter-spacing:.14em;background:rgba(0,0,0,.45);padding:.2rem .55rem;border-radius:20px;font-weight:600}
+.car .arr{position:absolute;top:50%;z-index:4;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.22);color:#fff;font-size:1.6rem;cursor:pointer;backdrop-filter:blur(4px)}.car .arr:hover{background:rgba(255,255,255,.4)}
+.car .prev{left:1.2vw}.car .next{right:1.2vw}
+.car .dots{position:absolute;bottom:18px;right:5vw;z-index:4;display:flex;gap:8px}.car .dots button{width:10px;height:10px;border-radius:50%;border:0;padding:0;background:rgba(255,255,255,.45);cursor:pointer}.car .dots button.on{background:#fff;width:26px;border-radius:6px}
+@media(max-width:800px){.car .arr{display:none}.car figcaption{top:72px;font-size:.9rem}.car .dots{right:auto;left:50%;transform:translateX(-50%);bottom:12px}.hero{padding-bottom:48px}}
 </style><link rel="icon" type="image/svg+xml" href="logo.svg"><link rel="icon" type="image/png" href="logo.png"></head><body>
 <nav><a class="brand" href="#top" aria-label="Project Sky-Path home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="38" height="38" aria-hidden="true"><defs><linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7cc3e8"/><stop offset="1" stop-color="#f7d9a8"/></linearGradient></defs><rect width="38" height="38" aria-hidden="true" rx="14" fill="url(#sk)"/><circle cx="44" cy="22" r="9" fill="#f2a03d"/><path d="M6 44 C 20 30, 40 30, 58 38" fill="none" stroke="#1d2622" stroke-width="5" stroke-linecap="round"/><path d="M6 44 C 20 30, 40 30, 58 38" fill="none" stroke="#6fa05a" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="1 5"/><path d="M17 38v18M32 33.5v22.5M47 34.5v21.5" stroke="#1d2622" stroke-width="3" stroke-linecap="round"/><path d="M27 31c-1-8 5-13 13-13-0 8-5 13-13 13z" fill="#5f7a55"/><path d="M27 31l9-9" stroke="#f5efe4" stroke-width="1.3" stroke-linecap="round"/></svg>
 <span><b>Sky-Path</b><small>The Texan Promenade</small></span></a><div class="spy"><a href="#opportunity" data-id="opportunity">Opportunity</a><a href="#vision" data-id="vision">Vision</a><a href="#design" data-id="design">Design</a><a href="#impact" data-id="impact">Impact</a><a href="#funding" data-id="funding">Funding</a><a href="#precedents" data-id="precedents">Precedents</a><a href="#petition" data-id="petition">Sign the petition</a><a href="#contact" data-id="contact">Get involved</a><i class="spybar"></i></div></nav>
-<header class="hero" id="top"><div><div class="eyebrow">Concept · Las Colinas Urban Center · Irving, TX</div>
+<header class="hero" id="top"><div class="car" id="car" aria-roledescription="carousel" aria-label="Sky-Path concept renderings"><div class="track"><figure aria-roledescription="slide" aria-label="1 of 5"><img src="img/carousel/c1.webp" alt="Sunrise runners and cyclists on the elevated path" fetchpriority="high"><figcaption>Morning on the path<br><span>Concept rendering</span></figcaption></figure><figure aria-roledescription="slide" aria-label="2 of 5"><img src="img/carousel/c2.webp" alt="Shade canopies along the path by Lake Carolyn" loading="lazy"><figcaption>Shade by the water<br><span>Concept rendering</span></figcaption></figure><figure aria-roledescription="slide" aria-label="3 of 5"><img src="img/carousel/c3.webp" alt="Dusk kiosks and string lights over the Mandalay Canal" loading="lazy"><figcaption>Evenings over the canal<br><span>Concept rendering</span></figcaption></figure><figure aria-roledescription="slide" aria-label="4 of 5"><img src="img/carousel/c4.webp" alt="Former APT station turned plaza with stairs and glass elevator" loading="lazy"><figcaption>Station plaza<br><span>Concept rendering</span></figcaption></figure><figure aria-roledescription="slide" aria-label="5 of 5"><img src="img/carousel/c5.webp" alt="Evening bench overlook by the clock tower" loading="lazy"><figcaption>The overlook<br><span>Concept rendering</span></figcaption></figure></div><button class="arr prev" aria-label="Previous slide">‹</button><button class="arr next" aria-label="Next slide">›</button><div class="dots"></div></div><div class="htxt"><div class="eyebrow">Concept · Las Colinas Urban Center · Irving, TX</div>
 <h1>Project Sky-Path<br>The Texan Promenade</h1>
 <p>Turning the abandoned Las Colinas APT people-mover guideway into an elevated park above the Urban Center: shaded, native and walkable.</p>
 <div class="stats"><div><strong class="cnt" data-to="1.4" data-dec="1" data-suf=" mi">1.4 mi</strong>guideway</div><div><strong class="cnt" data-to="4">4</strong>stations</div><div><strong class="cnt" data-to="2020" data-nofmt="1">2020</strong>closed</div><div><strong class="cnt" data-to="0.35" data-dec="2" data-suf=" mi">0.35 mi</strong>pilot segment</div></div></div></header>
@@ -85,8 +96,6 @@ section[id]{scroll-margin-top:70px}
 
 <section id="design" class="reveal"><div class="eyebrow">Design concept</div><h2>Designed for a Texas summer</h2>
 <p class="lead">Native, heat-tolerant xeriscaping and sustainable timber decking make a cooler stretch of walkway in the middle of the Urban Center.</p>
-<div class="ba"><figure><img src="img/before.jpg" alt="Before"><figcaption>BEFORE: APT in service</figcaption></figure>
-<figure><img src="img/after.jpg" alt="After rendering"><figcaption>AFTER: The Texan Promenade (concept)</figcaption></figure></div>
 <div class="specs"><div><b>Low-water landscape</b>Agave, yucca, Texas sage</div><div><b>Integrated lighting</b>LED-embedded floor systems</div><div><b>Thermal buffer</b>Timber decking cuts heat-island effect</div><div><b>Deck width</b>12–16 ft path on the dual-lane guideway</div></div>
 <h3 style="margin-top:4rem;font-size:1.8rem">Activation elements</h3>
 <div class="grid stag">
@@ -129,16 +138,14 @@ section[id]{scroll-margin-top:70px}
 <label>Email<input type="email" name="email" required autocomplete="email"></label>
 <label>ZIP code<input type="text" name="zip" required inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code"></label>
 <label class="chk"><input type="checkbox" name="irving" value="yes"> I live or work in Irving</label>
-<div class="full"><button class="btn" type="submit">Sign the petition</button><p class="fine" id="perr" role="alert"></p><p class="fine">We only use your details to count support and share project updates.</p></div></form>
+<div class="full"><button class="btn" type="submit">Sign the petition</button><p class="fine" id="psoon" role="status" style="font-weight:600;color:var(--clay)"></p><p class="fine" id="perr" role="alert"></p><p class="fine">We only use your details to count support and share project updates.</p></div></form>
 <div class="thanks" id="thanks" hidden><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="#5f7a55" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="18" fill="#e9f0e4"/><path d="m16 24 6 6 11-12"/></svg><h3>Thank you for signing!</h3><p>Your name helps show there's real support for Sky-Path. Please share this page with a neighbor or coworker.</p></div>
 </div></section>
 <section id="contact" class="cta reveal"><div class="eyebrow">Get involved</div><h2>Interested in Sky-Path?</h2>
 <p class="lead" style="margin:0 auto 2rem">Council members, property owners and prospective sponsors: we'd like to hear from you.</p>
 <a class="btn" href="mailto:jeff.cott100@gmail.com?subject=Project%20Sky-Path%20interest">Express interest</a></section>
-<footer>Project Sky-Path is an independent concept proposal. Renderings are illustrative.</footer>
+<footer>Project Sky-Path is an independent concept proposal. Renderings are illustrative.<br>Renderings are concept visualizations based on photos of the Las Colinas APT: Payton Chung (CC BY 2.0), Ansem27 via Wikimedia Commons (CC BY-SA 3.0), Wikimedia Commons (CC BY 2.5).</footer>
 <script>
-const PETITION_ENDPOINT=""; // set to a form/API URL (POST JSON) later; empty = mailto fallback
-const PETITION_MAILTO="jeff.cott100@gmail.com";
 const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
 const o=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');[...x.target.children].forEach((c,i)=>c.style.transitionDelay=x.target.classList.contains('stag')?i*90+'ms':'');setTimeout(()=>[...x.target.children].forEach(c=>c.style.transitionDelay=''),1400);o.unobserve(x.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal,.stag').forEach(el=>o.observe(el));
@@ -152,10 +159,15 @@ const upd=()=>{const y=nav.offsetHeight+80;let on=null;A.forEach(a=>{const el=do
  if(a){bar.style.opacity=1;bar.style.width=a.offsetWidth+'px';bar.style.transform=`translateX(${a.offsetLeft}px)`;if(a.offsetLeft<spy.scrollLeft||a.offsetLeft+a.offsetWidth>spy.scrollLeft+spy.clientWidth)spy.scrollTo({left:a.offsetLeft-20,behavior:RM?'auto':'smooth'})}else bar.style.opacity=0};
 addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);setTimeout(upd,50);
 const pf=document.getElementById('pform');
-pf.addEventListener('submit',async ev=>{ev.preventDefault();const d=Object.fromEntries(new FormData(pf));d.irving=d.irving?'yes':'no';const err=document.getElementById('perr');
- if(!d.name.trim()||!/^\S+@\S+\.\S+$/.test(d.email)||!/^\d{5}$/.test(d.zip)){err.textContent='Please enter your name, a valid email and a 5-digit ZIP.';return}err.textContent='';
- if(PETITION_ENDPOINT){try{const r=await fetch(PETITION_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});if(!r.ok)throw 0}catch(e){err.textContent='Something went wrong. Please try again.';return}}
- else{const body=`Name: ${d.name}\nEmail: ${d.email}\nZIP: ${d.zip}\nLives/works in Irving: ${d.irving}`;location.href=`mailto:${PETITION_MAILTO}?subject=${encodeURIComponent('Sky-Path petition signature')}&body=${encodeURIComponent(body)}`}
- pf.hidden=true;document.getElementById('thanks').hidden=false});
+pf.addEventListener('submit',ev=>{ev.preventDefault();document.getElementById('psoon').textContent='Petition launching soon. Thanks for your interest!'});
+(()=>{const c=document.getElementById('car'),t=c.querySelector('.track'),n=t.children.length,dots=c.querySelector('.dots');let i=0,tm=null,paused=false,x0=null;
+for(let k=0;k<n;k++){const b=document.createElement('button');b.setAttribute('aria-label','Go to slide '+(k+1));b.onclick=()=>{stop();go(k)};dots.appendChild(b)}
+const go=k=>{i=(k+n)%n;t.style.transform=`translateX(${-i*100}%)`;[...dots.children].forEach((d,j)=>d.classList.toggle('on',j==i));[...t.children].forEach((f,j)=>f.setAttribute('aria-hidden',j!=i))};
+const stop=()=>{paused=true;clearInterval(tm)};
+c.querySelector('.prev').onclick=()=>{stop();go(i-1)};c.querySelector('.next').onclick=()=>{stop();go(i+1)};
+c.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;stop()},{passive:true});
+c.addEventListener('touchend',e=>{if(x0==null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)go(i+(dx<0?1:-1));x0=null});
+c.addEventListener('keydown',e=>{if(e.key=='ArrowLeft'){stop();go(i-1)}if(e.key=='ArrowRight'){stop();go(i+1)}});
+go(0);if(!RM)tm=setInterval(()=>{if(!paused&&!document.hidden)go(i+1)},5000)})();
 </script>
 </body></html>
